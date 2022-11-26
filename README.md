@@ -4,7 +4,6 @@ Ktor Serverの技術検証をするレポジトリ
 
 ## Tech Stack
 
-**Server:**
 |Tech|ver|
 |---|---|
 |Kotlin |1.7.20|
