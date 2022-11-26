@@ -12,11 +12,19 @@ Ktor Serverの技術検証をするレポジトリ
 
 ## Installation
 
-Install my-project
+**Install my-project**
 
 ```bash
 git clone git@github.com:magatakohei/ktor-http-sample-.git
 cd ktor-http-sample-
+```
+
+**Create JWT RS256 private key**
+
+```bash
+openssl genrsa -out private.key 2048
+openssl rsa -in private.key -pubout -out public.key
+cat private.key.pk8 | tr -d "\n" | sed -e "s/-----BEGIN PRIVATE KEY-----//" -e "s/-----END PRIVATE KEY-----//"
 ```
 
 ## Deployment
