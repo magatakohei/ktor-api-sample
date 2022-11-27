@@ -1,9 +1,12 @@
 package com.example.dao
 
+import com.example.dao.table.Customers
 import io.ktor.server.application.ApplicationEnvironment
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
+import org.jetbrains.exposed.sql.transactions.transaction
 
 object DatabaseFactory {
     fun init(environment: ApplicationEnvironment) {
@@ -13,6 +16,10 @@ object DatabaseFactory {
         val password = environment.config.property("database.password").getString()
 
         val database = Database.connect(url, driver, user, password)
+        transaction(database) {
+            // テーブルが存在しなければ作成
+            SchemaUtils.create(Customers)
+        }
     }
 
     suspend fun <T> dbQuery(block: suspend () -> T): T =
