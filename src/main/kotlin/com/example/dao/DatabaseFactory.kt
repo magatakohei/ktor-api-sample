@@ -1,6 +1,7 @@
 package com.example.dao
 
 import com.example.dao.table.Customers
+import com.example.dao.table.OrderItems
 import io.ktor.server.application.ApplicationEnvironment
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
@@ -18,7 +19,10 @@ object DatabaseFactory {
         val database = Database.connect(url, driver, user, password)
         transaction(database) {
             // テーブルが存在しなければ作成
-            SchemaUtils.create(Customers)
+            SchemaUtils.create(
+                Customers,
+                OrderItems
+            )
         }
     }
 
