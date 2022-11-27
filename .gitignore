@@ -56,3 +56,6 @@ out/
 *.zip
 *.tar.gz
 *.rar
+
+# docker
+/docker/mysql/db/**
