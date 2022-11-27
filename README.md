@@ -5,9 +5,10 @@ Ktor Serverの技術検証をするレポジトリ
 ## Tech Stack
 
 |Tech|ver|
-|---|---|
+|---|--|
 |Kotlin |1.7.20|
 |Ktor| 2.1.3|
+|Ktor| 0.41.1|
 
 ## Installation
 
@@ -16,6 +17,13 @@ Ktor Serverの技術検証をするレポジトリ
 ```bash
 git clone git@github.com:magatakohei/ktor-http-sample-.git
 cd ktor-http-sample-
+```
+
+**Setup Database**
+
+```bash
+cd docker
+docker-compose up -d
 ```
 
 **Create JWT RS256 private key**

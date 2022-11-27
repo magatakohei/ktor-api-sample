@@ -1,10 +1,9 @@
-package com.example.models
+package com.example.models.request
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Customer(
-    val id: Int,
+data class CreateCustomerRequest(
     val firstName: String,
     val lastName: String,
     val email: String
