@@ -4,7 +4,6 @@ import com.example.dao.CustomerDAOFacade
 import com.example.dao.DatabaseFactory.dbQuery
 import com.example.dao.table.Customers
 import com.example.models.Customer
-import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.deleteWhere
@@ -54,10 +53,4 @@ class CustomerDAOFacadeImpl : CustomerDAOFacade {
     )
 }
 
-val customerDao: CustomerDAOFacade = CustomerDAOFacadeImpl().apply {
-    runBlocking {
-        if (allCustomers().isEmpty()) {
-            addNewCustomer("firstName", "lastName", "email@example.com")
-        }
-    }
-}
+val customerDao: CustomerDAOFacade = CustomerDAOFacadeImpl()
