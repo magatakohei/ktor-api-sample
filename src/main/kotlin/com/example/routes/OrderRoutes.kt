@@ -56,7 +56,7 @@ fun Route.orderRouting() {
                 "Not Found",
                 status = HttpStatusCode.NotFound
             )
-            val total = order.contents.sumOf { BigDecimal(it.price) * BigDecimal(it.quantity) }
+            val total = order.contents.sumOf { BigDecimal(it.price) * BigDecimal(it.quantity) }.toString()
             call.respond(total)
         }
     }
