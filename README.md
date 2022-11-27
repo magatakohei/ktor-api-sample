@@ -15,8 +15,8 @@ Ktor Serverの技術検証をするレポジトリ
 **Install my-project**
 
 ```bash
-git clone git@github.com:magatakohei/ktor-http-sample-.git
-cd ktor-http-sample-
+git clone git@github.com:magatakohei/ktor-api-sample.git
+cd ktor-api-sample
 ```
 
 **Setup Database**
