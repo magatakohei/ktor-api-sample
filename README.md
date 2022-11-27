@@ -18,6 +18,13 @@ git clone git@github.com:magatakohei/ktor-http-sample-.git
 cd ktor-http-sample-
 ```
 
+**Setup Database**
+
+```bash
+cd docker
+docker-compose up -d
+```
+
 **Create JWT RS256 private key**
 
 ```bash
